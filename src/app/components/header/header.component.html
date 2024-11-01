@@ -1,0 +1,16 @@
+<header>
+    <div id="top-left">
+<h1 >PARKING APP</h1>
+    </div>
+<div id="top-right">
+    <a [routerLink]="['/estado-cocheras']" routerLinkActive="router-link-active">Estado de cocheras</a>
+    @if (esAdmin) {
+        <a [routerLink]="['/reportes']" routerLinkActive="router-link-active">Reportes</a>
+        <a [routerLink]="['/precios']" routerLinkActive="router-link-active">Precios</a>
+    }
+    
+
+    <a (click)="handleLogin()"><img src="/imagenes/descarga.png" alt=""></a>
+    
+</div>
+</header>

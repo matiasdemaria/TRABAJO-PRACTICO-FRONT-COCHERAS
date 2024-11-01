@@ -1,0 +1,21 @@
+<body>
+<app-header></app-header>
+<main>
+
+<div id="tabla">
+    <div id="header-tabla">
+        <div><p>TIEMPO</p></div>    
+        <div><p>COSTO</p></div>    
+        <div><p>ACCIONES</p></div>    
+    </div>
+    @for (tarifa of tarifas; track $index) {
+        <div  class="cuerpo-tabla" >    
+            <div class="filas"> {{tarifa.id}}</div>
+            <div class="filas">{{tarifa.valor}}</div>
+            <div class="filas"><button (click)="updateTarifas(tarifa.id)"> <img src="imagenes/tarifas.png" alt=""></button></div>
+    </div>   
+    }
+</div>
+</main>
+</body>
+    

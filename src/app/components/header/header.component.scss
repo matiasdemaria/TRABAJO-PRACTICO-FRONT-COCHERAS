@@ -1,0 +1,51 @@
+@use "./../../../../public/styles/colores.scss";
+
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    background-color:colores.$color-background;
+    align-items: center;
+    
+    #top-left{
+        
+    
+        h1{
+            color: colores.$color-letra;
+            margin-left: 12%;
+            width: 100%;
+            font-size: 280%;
+        }
+        
+    }
+    
+    #top-right{
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Alinea verticalmente */
+        padding-left: 0;
+        justify-content: center;
+
+
+        a{
+            color:colores.$color-letra;
+            display: flex;
+            margin-right: 24px;
+            font-size: 150%;
+            text-decoration: none;
+            align-items: center;
+
+        
+        }
+        img{
+            display: flex;
+            height: 70%;
+            width: 60%;
+            margin-top: 5%;
+            margin-right: 20px;
+            margin-left: 5%;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@use "./../../../../public/styles/colores.scss";
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-image: url(/imagenes/PARKING\ IMAGE.jpeg);
+    background-size: cover; /* Para que el fondo cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
+    margin: 0; /* Elimina el margen por defecto del body */
+    
+
+
+#tabla{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+    background-color: colores.$color-tabla;
+    color: colores.$color-letra;
+
+    .filas {
+        flex: 1; // Asegura que cada columna tome el mismo espacio
+        text-align: center; // Centra el texto en cada celda
+        margin: 0; // Elimina márgenes adicionales
+
+        button{
+            display: flex;
+            box-shadow: none;
+            background-color: rgba(29, 27, 27, 0);
+            margin-left: 30%;
+            border: none;
+            cursor: pointer;
+        }
+    }
+    
+    #header-tabla{
+        font-size: 190%;
+        text-align: center;
+        width: 100%;
+        align-items: center;
+    }
+    >div{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        border-bottom: 1px solid black;
+        height: 80px;
+    }
+    
+    .cuerpo-tabla {
+        display: flex;
+        flex-direction: row;
+        font-size: 150%;
+        color: colores.$color-letra;
+        width: 100%;
+        align-items: center; // Alinea verticalmente
+        justify-content: space-between; // Distribuye el espacio entre elementos
+        
+        img {
+            height: 50px;
+            width: 60px;
+            box-shadow: none;
+        }
+
+        
+
+
+        }
+        
+
+        }
+        
+        
+    }       

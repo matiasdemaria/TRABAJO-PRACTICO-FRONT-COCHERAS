@@ -1,0 +1,46 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+<app-header></app-header>
+<main>
+
+<div id="tabla">
+    <div id="header-tabla">
+        <div><p>N°</p></div>    
+        <div><p>DISPONIBILIDAD</p></div>    
+        <div><p>INGRESO</p></div>    
+        <div><p>ACCIONES</p></div>    
+    </div>
+    @for (fila of filas; track $index) {
+        <div  class="cuerpo-tabla" >
+            <div class="filas">{{ fila.id }}</div>
+            @if (!fila.deshabilitada && !fila.activo) {
+                <button (click)="abrirModalNuevoEstacionamiento(fila.id)" class="disponible"><span >DISPONIBLE</span></button>
+            } 
+            @if (fila.activo) {
+                <button class="patente" (click)="cerrarEstacionamiento(fila.id, fila.activo.id,fila.activo.patente)" ><span >{{fila.activo.patente}}</span></button>
+            }
+            @if(fila.deshabilitada && !fila.activo){
+                <button class="ocupado"><span >DISPONIBLE</span></button>
+            }
+<div class="ingreso">{{ fila.activo?.horaIngreso || (fila.horaDeshabilitacion | date: '') }}</div>
+            
+            <div class="acciones-container">
+                @if (fila.deshabilitada) {
+                    <button (click)="cambiarDisponibilidadCochera(fila.id,fila.deshabilitada)"><img src="imagenes/descarga (2).png" alt="Cambiar disponibilidad fila"></button>
+                }@else{
+                    <button (click)="cambiarDisponibilidadCochera(fila.id,fila.deshabilitada)"><img src="imagenes/descarga (1).png" alt="Cambiar disponibilidad fila"></button>
+                }
+                <button (click)="eliminarCochera(fila.id)"><img src="imagenes/trash2_110933.webp" alt="Borrar fila"></button>
+            </div>
+        </div>
+    }
+    
+</div>
+
+<div id="agregar">
+    <button (click)="agregarFila()"> 
+        <img src="/imagenes/descarga (4).png" alt="">
+    </button>
+</div>  
+</main>
+</body>
